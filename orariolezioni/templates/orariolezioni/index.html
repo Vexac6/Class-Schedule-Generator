@@ -1,0 +1,16 @@
+{% if lista_fac %}
+    <ul>
+    {% for facolta in lista_fac %}
+        <li>
+        <a href="{% url 'orariolezioni:orario_f' facolta.id %}">{{ facolta.nome }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Non ci sono ancora Facoltà aperte.</p>
+{% endif %}
+{% if user.is_authenticated %}
+    <p>Benvenuto {{ user.username }}!</p>
+    <section><a href="orario_personale/">Orario personale</a></section>
+    <section><a href="logout/">Logout</a> </section>
+{% endif %}

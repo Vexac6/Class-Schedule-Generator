@@ -1,0 +1,144 @@
+<!DOCTYPE>
+    <html>
+    <head>
+        <title>{{ nome }}</title>
+        <style>
+            table { table-layout: fixed;}
+
+            td { width: 200px;
+                 height: 50px;
+                 font-size: 0.9em;
+                 font-family: sans-serif;
+                 text-align: center;}
+
+            th { width: 200px;
+                 height: 50px;
+                 font-size: 1.2em;}
+        </style>
+        <script>
+            var tabella_aule = [];
+            {% for riga in  aule  %}
+                {% for cella in riga %}
+                    tabella_aule.push("{{ cella }}");
+                {% endfor %}
+            {% endfor %}
+            var tabella_corsi = [];
+            {% for riga in  tabella  %}
+                {% for cella in riga %}
+                    tabella_corsi.push("{{ cella }}");
+                {% endfor %}
+            {% endfor %}
+        </script>
+    </head>
+    <body>
+    <table border="1" bgcolor="LemonChiffon">
+        <tr bgcolor="orange">
+            <th bgcolor="DarkTurquoise">{{ tabella.0.0 }}</th>
+            <th>{{ tabella.0.1 }}</th>
+            <th>{{ tabella.0.2 }}</th>
+            <th>{{ tabella.0.3 }}</th>
+            <th>{{ tabella.0.4 }}</th>
+            <th>{{ tabella.0.5 }}</th>
+        </tr>
+        <tr bgcolor="LightGray">
+            <th bgcolor="SeaGreen">{{ tabella.1.0 }}</th>
+            <td onclick="info(this)">{{ tabella.1.1 }}</td>
+            <td onclick="info(this)">{{ tabella.1.2 }}</td>
+            <td onclick="info(this)">{{ tabella.1.3 }}</td>
+            <td onclick="info(this)">{{ tabella.1.4 }}</td>
+            <td onclick="info(this)">{{ tabella.1.5 }}</td>
+        </tr>
+                <tr>
+            <th bgcolor="MediumSeaGreen">{{ tabella.2.0 }}</th>
+            <td onclick="info(this)">{{ tabella.2.1 }}</td>
+            <td onclick="info(this)">{{ tabella.2.2 }}</td>
+            <td onclick="info(this)">{{ tabella.2.3 }}</td>
+            <td onclick="info(this)">{{ tabella.2.4 }}</td>
+            <td onclick="info(this)">{{ tabella.2.5 }}</td>
+        </tr>
+                <tr>
+            <th bgcolor="MediumSeaGreen">{{ tabella.3.0 }}</th>
+            <td onclick="info(this)">{{ tabella.3.1 }}</td>
+            <td onclick="info(this)">{{ tabella.3.2 }}</td>
+            <td onclick="info(this)">{{ tabella.3.3 }}</td>
+            <td onclick="info(this)">{{ tabella.3.4 }}</td>
+            <td onclick="info(this)">{{ tabella.3.5 }}</td>
+        </tr>
+                <tr>
+            <th bgcolor="MediumSeaGreen">{{ tabella.4.0 }}</th>
+            <td onclick="info(this)">{{ tabella.4.1 }}</td>
+            <td onclick="info(this)">{{ tabella.4.2 }}</td>
+            <td onclick="info(this)">{{ tabella.4.3 }}</td>
+            <td onclick="info(this)">{{ tabella.4.4 }}</td>
+            <td onclick="info(this)">{{ tabella.4.5 }}</td>
+        </tr>
+                <tr>
+            <th bgcolor="MediumSeaGreen">{{ tabella.5.0 }}</th>
+            <td onclick="info(this)">{{ tabella.5.1 }}</td>
+            <td onclick="info(this)">{{ tabella.5.2 }}</td>
+            <td onclick="info(this)">{{ tabella.5.3 }}</td>
+            <td onclick="info(this)">{{ tabella.5.4 }}</td>
+            <td onclick="info(this)">{{ tabella.5.5 }}</td>
+        </tr>
+                <tr bgcolor="LightGray">
+            <th bgcolor="SeaGreen">{{ tabella.6.0 }}</th>
+            <td onclick="info(this)">{{ tabella.6.1 }}</td>
+            <td onclick="info(this)">{{ tabella.6.2 }}</td>
+            <td onclick="info(this)">{{ tabella.6.3 }}</td>
+            <td onclick="info(this)">{{ tabella.6.4 }}</td>
+            <td onclick="info(this)">{{ tabella.6.5 }}</td>
+        </tr>
+                <tr bgcolor="LightGray">
+            <th bgcolor="SeaGreen">{{ tabella.7.0 }}</th>
+            <td onclick="info(this)">{{ tabella.7.1 }}</td>
+            <td onclick="info(this)">{{ tabella.7.2 }}</td>
+            <td onclick="info(this)">{{ tabella.7.3 }}</td>
+            <td onclick="info(this)">{{ tabella.7.4 }}</td>
+            <td onclick="info(this)">{{ tabella.7.5 }}</td>
+        </tr>
+                <tr>
+            <th bgcolor="MediumSeaGreen">{{ tabella.8.0 }}</th>
+            <td onclick="info(this)">{{ tabella.8.1 }}</td>
+            <td onclick="info(this)">{{ tabella.8.2 }}</td>
+            <td onclick="info(this)">{{ tabella.8.3 }}</td>
+            <td onclick="info(this)">{{ tabella.8.4 }}</td>
+            <td onclick="info(this)">{{ tabella.8.5 }}</td>
+        </tr>
+                <tr>
+            <th bgcolor="MediumSeaGreen">{{ tabella.9.0 }}</th>
+            <td onclick="info(this)">{{ tabella.9.1 }}</td>
+            <td onclick="info(this)">{{ tabella.9.2 }}</td>
+            <td onclick="info(this)">{{ tabella.9.3 }}</td>
+            <td onclick="info(this)">{{ tabella.9.4 }}</td>
+            <td onclick="info(this)">{{ tabella.9.5 }}</td>
+        </tr>
+                <tr bgcolor="LightGray">
+            <th bgcolor="SeaGreen">{{ tabella.10.0 }}</th>
+            <td onclick="info(this)">{{ tabella.10.1 }}</td>
+            <td onclick="info(this)">{{ tabella.10.2 }}</td>
+            <td onclick="info(this)">{{ tabella.10.3 }}</td>
+            <td onclick="info(this)">{{ tabella.10.4 }}</td>
+            <td onclick="info(this)">{{ tabella.10.5 }}</td>
+        </tr>
+    </table>
+    </body>
+    <script>
+            function info(elem) {
+                var riga = elem.closest('tr').rowIndex;
+                var colonna = elem.cellIndex;
+                var posizione;
+                if (elem.innerHTML !== "" && elem.style.backgroundColor !== 'LightCoral') {
+                    posizione = 6*(riga)+(colonna);
+                    elem.style.backgroundColor = 'LightCoral';
+                    elem.innerHTML = tabella_aule[posizione];
+                }
+                else if (elem.innerHTML !== "") {
+                    posizione = 6*(riga)+(colonna);
+                    elem.innerHTML = tabella_corsi[posizione];
+                    if (riga == 1 || riga == 6 || riga == 7 || riga == 10)
+                        elem.style.backgroundColor = 'LightGray';
+                    else elem.style.backgroundColor = 'LemonChiffon';
+                }
+            }
+    </script>
+    </html>

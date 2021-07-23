@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% comment %}   Main page to authenticate users. {% endcomment %}
+{% block head %}
+  <title>Orariolezioni | Login</title>
+{% endblock %}
+{% block body %}
+  <header>
+    <h1>Orariolezioni</h1>
+    <h2>Pagina di login</h2>
+  </header>
+  <section>
+    {% if form.errors %}
+      <p>Username o Password non corretti, ritenta per favore.</p>
+    {% endif %}
+
+  <form method="post">
+      {% csrf_token %}
+      <p>
+        {{ form.username.label_tag }}
+        {{ form.username }}
+      </p>  <p>
+        {{ form.password.label_tag }}
+        {{ form.password }}
+      </p>
+      {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+      {% else %}
+        <input type="hidden" name="next" value="/login/" />
+      {% endif %}
+      <input type="submit" value="login" />
+    </form>
+  </section>
+{% endblock %}
